@@ -1,0 +1,147 @@
+
+.dark {
+  background-color: #000612;
+}
+
+.everything {
+  color: aliceblue;
+}
+
+:root {
+  --primary: #d4af37;
+  --secondary: #2c2c2c;
+  --crystal: rgba(255, 255, 255, 0.8);
+}
+
+body {
+  background-color: #121212;
+  color: white;
+  font-family: 'David Libre', 'Roboto Mono';
+}
+
+.crystal-divider {
+  position: relative;
+  height: 30px;
+  margin: 20px 0;
+}
+
+.crystal-divider::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--crystal);
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.3);
+}
+
+.crystal-divider::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: var(--crystal);
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
+}
+
+.pricing-card {
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pricing-card:hover::before {
+  opacity: 1;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
+
+.feature-item::before {
+  content: '✦';
+  color: var(--primary);
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.chandelier-base {
+  width: 100px;
+  height: 30px;
+  background: var(--secondary);
+  margin: 0 auto;
+  border-radius: 0 0 10px 10px;
+  position: relative;
+}
+
+.chandelier-base::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: var(--secondary);
+  border-radius: 50%;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.chandelier-chains {
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.chain {
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--primary), #5d4a15);
+  margin: 0 auto;
+  position: relative;
+}
+
+.chain::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: var(--primary);
+  border-radius: 50%;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
+@media (max-width: 768px) {
+  .pricing-card {
+    margin-bottom: 30px;
+  }
+
+  .chandelier-chains {
+    display: none;
+  }
+}
